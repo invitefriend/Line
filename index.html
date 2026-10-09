@@ -1,132 +1,523 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="dark">
 <head>
   <script src="https://pl30627583.profitableratecpmnetwork.com/d5/60/79/d56079c7788bd3e1f5be8a617ee76745.js"></script>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Video Player UI</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    body, html {
-      width: 100%;
-      height: 100%;
-      background-color: #000;
-      font-family: Arial, sans-serif;
-      overflow: hidden;
-    }
-    .container {
-      position: relative;
-      width: 100%;
-      height: 100vh;
-      max-width: 480px;
-      margin: 0 auto;
-      background: url('https://i.ibb.co.com/FbVjZn0x/Gemini-Generated-Image-lelskmlelskmlels.jpg') no-repeat center center/cover;
-    }
-    .overlay-link {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-      text-decoration: none;
-    }
-    .close-btn {
-      position: absolute;
-      top: 15px;
-      left: 15px;
-      color: #fff;
-      font-size: 24px;
-      z-index: 2;
-      text-decoration: none;
-      text-shadow: 0 1px 3px rgba(0,0,0,0.8);
-    }
-    .center-content {
-      position: absolute;
-      top: 55%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-      z-index: 2;
-      pointer-events: none;
-    }
-    .profile-avatar {
-      width: 90px;
-      height: 90px;
-      border-radius: 50%;
-      border: 2px solid #fff;
-      object-fit: cover;
-      margin-bottom: 10px;
-    }
-    .title-text {
-      color: #fff;
-      font-size: 20px;
-      font-weight: bold;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.8);
-    }
-    .bottom-bar {
-      position: absolute;
-      bottom: 20px;
-      left: 0;
-      width: 100%;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      z-index: 2;
-      padding: 0 20px;
-    }
-    .action-btn {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      color: #fff;
-      text-decoration: none;
-      font-size: 12px;
-      text-shadow: 0 1px 3px rgba(0,0,0,0.8);
-    }
-    .action-btn svg {
-      width: 28px;
-      height: 28px;
-      fill: #fff;
-      margin-bottom: 4px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Premium 18+ - HD Streaming</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            red: '#E50914',
+                            darkRed: '#B81D24',
+                            dark: '#0F0F10',
+                            card: '#18181C',
+                            border: '#27272A'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0F0F10;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #27272A;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3F3F46;
+        }
+        .pulse-red {
+            animation: pulse-red 2s infinite;
+        }
+        @keyframes pulse-red {
+            0% { box-shadow: 0 0 0 0 rgba(229, 9, 20, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(229, 9, 20, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(229, 9, 20, 0); }
+        }
+    </style>
 </head>
-<body>
+<body class="bg-brand-dark text-gray-100 font-sans min-h-screen flex flex-col justify-between antialiased">
 
-  <div class="container">
-    <!-- Link transparan menutupi seluruh layar -->
-    <a href="https://www.profitableratecpmnetwork.com/agijdjkf?key=b68403d796344c04660419b144a9cea4" class="overlay-link"></a>
+    <div id="age-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-md transition-opacity duration-300">
+        <div class="bg-brand-card border border-brand-border rounded-2xl max-w-md w-full p-6 text-center shadow-2xl relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-600 via-brand-red to-orange-500"></div>
+            
+            <div class="w-16 h-16 bg-red-500/10 border border-red-500/20 text-brand-red rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+                18+
+            </div>
 
-    <!-- Tombol Close (X) -->
-    <a href="https://www.profitableratecpmnetwork.com/agijdjkf?key=b68403d796344c04660419b144a9cea4" class="close-btn">&#10005;</a>
+            <h2 class="text-2xl font-bold text-white mb-2">Konfirmasi Usia Anda</h2>
+            <p class="text-gray-400 text-sm mb-6">
+                Konten di dalam halaman ini mengandung materi khusus dewasa. Apakah Anda berusia 18 tahun atau lebih?
+            </p>
 
-    <!-- Avatar Tengah & Teks -->
-    <div class="center-content">
-      <img src="https://i.ibb.co/PvRgZY14/649870db-b292-4289-8d5f-672456bba70d-2.jpg" alt="Profile" class="profile-avatar">
-      <div class="title-text">&gt;เจอจ่ายจบ&lt;</div>
+            <div class="flex flex-col gap-3">
+                <button id="btn-age-yes" onclick="confirmAge(true)" class="w-full py-3.5 px-4 bg-brand-red hover:bg-brand-darkRed text-white font-semibold rounded-xl shadow-lg transition-all transform active:scale-95 pulse-red flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-check"></i> Saya Berusia 18+ (Masuk)
+                </button>
+                <button onclick="confirmAge(false)" class="w-full py-3 px-4 bg-zinc-800 hover:bg-zinc-700 text-gray-400 hover:text-white font-medium rounded-xl transition-all text-sm">
+                    Saya Belum 18+ (Keluar)
+                </button>
+            </div>
+
+            <p class="text-xs text-gray-500 mt-5">
+                Dengan mengklik tombol masuk, Anda menyetujui Syarat & Ketentuan Layanan kami.
+            </p>
+        </div>
     </div>
 
-    <!-- Tombol Navigasi Bawah -->
-    <div class="bottom-bar">
-      <a href="https://www.profitableratecpmnetwork.com/agijdjkf?key=b68403d796344c04660419b144a9cea4" class="action-btn">
-        <svg viewBox="0 0 24 24"><path d="M15 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm-9 0c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4zm9 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45v2h6v-2c0-2.66-5.33-4-8-4z"/></svg>
-        Tambah
-      </a>
-      <a href="https://www.profitableratecpmnetwork.com/agijdjkf?key=b68403d796344c04660419b144a9cea4" class="action-btn">
-        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8 0-1.85.63-3.55 1.69-4.9L16.9 17.31C15.55 18.37 13.85 19 12 19zm5.31-3.1L6.69 5.31C8.05 4.25 9.75 3.6 11.6 3.6c4.42 0 8 3.58 8 8 0 1.85-.63 3.55-1.69 4.9z"/></svg>
-        Blokir
-      </a>
-      <a href="https://www.profitableratecpmnetwork.com/agijdjkf?key=b68403d796344c04660419b144a9cea4" class="action-btn">
-        <svg viewBox="0 0 24 24"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/></svg>
-        Laporkan
-      </a>
-    </div>
-  </div>
+    <header class="sticky top-0 z-40 bg-brand-dark/95 backdrop-blur-md border-b border-brand-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="bg-brand-red text-white text-xl font-black px-2.5 py-1 rounded-md tracking-wider flex items-center gap-1">
+                    <i class="fa-solid fa-play text-sm"></i> STREAM
+                </div>
+                <span class="bg-red-500/10 border border-red-500/30 text-brand-red text-xs px-2 py-0.5 rounded font-bold">18+ HD</span>
+            </div>
+            
+            <div class="flex items-center gap-3">
+                <button onclick="triggerAdsterraLink()" class="hidden sm:flex items-center gap-2 bg-zinc-800 hover:bg-zinc-700 text-xs text-gray-300 font-medium px-3 py-2 rounded-lg border border-brand-border transition">
+                    <i class="fa-solid fa-bolt text-yellow-500"></i> Server Fast 4K
+                </button>
+                <div class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></div>
+                <span class="text-xs text-gray-400 font-medium hidden xs:inline">Live Stream</span>
+            </div>
+        </div>
+    </header>
 
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 w-full flex-grow">
+        
+        <!-- Slot Iklan Banner Atas (Header Leaderboard 728x90) -->
+        <div class="mb-6 flex justify-center items-center min-h-[90px] bg-brand-card/50 border border-dashed border-brand-border rounded-xl p-2 text-center overflow-hidden">
+            <!-- PLACEHOLDER ADSTERRA 728x90 -->
+            <div id="adsterra-banner-728">
+                <!-- Ganti script di bawah ini dengan script Adsterra Anda -->
+                <div class="text-xs text-gray-500">
+                    <p class="font-semibold text-gray-400 mb-1">[ Space Iklan Adsterra 728x90 ]</p>
+                    <p>Masukkan script iklan Banner 728x90 Anda di sini</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            
+            <!-- Kolom Video & Informasi (2/3 Grid di Desktop) -->
+            <div class="lg:col-span-2 flex flex-col gap-4">
+                
+                <div class="relative bg-black rounded-2xl overflow-hidden shadow-2xl border border-brand-border group">
+                    <div class="aspect-video w-full relative flex items-center justify-center bg-zinc-900">
+                        
+                        <!-- Video Tag -->
+                        <video id="main-video" class="w-full h-full object-cover" poster="https://i.ibb.co/540pNr.n3/Screenshot-20261004-101412-2.jpg">
+                            <!-- Sample MP4 Source -->
+                            <source src="https://files.calbox.moe/s618xg.mp4" type="video/mp4">
+                            Browser Anda tidak mendukung tag video.
+                        </video>
+
+                        <!-- Video Overlay Trigger untuk Ads -->
+                        <div id="video-overlay" onclick="handleVideoClick()" class="absolute inset-0 bg-black/40 flex items-center justify-center cursor-pointer group-hover:bg-black/30 transition">
+                            <div class="w-20 h-20 bg-brand-red/90 hover:bg-brand-red text-white rounded-full flex items-center justify-center shadow-2xl transform transition group-hover:scale-110 pulse-red">
+                                <i class="fa-solid fa-play text-3xl ml-1"></i>
+                            </div>
+                        </div>
+
+                        <!-- Top Gradient Shadow -->
+                        <div class="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-black/80 to-transparent pointer-events-none"></div>
+
+                        <!-- Custom Controls Overlay -->
+                        <div id="video-controls" class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent p-4 flex flex-col gap-2 transition-opacity duration-300 opacity-90">
+                            <!-- Progress Bar -->
+                            <input id="progress-bar" type="range" min="0" max="100" value="0" class="w-full h-1.5 bg-zinc-700 rounded-lg appearance-none cursor-pointer accent-brand-red">
+                            
+                            <div class="flex items-center justify-between text-xs sm:text-sm text-gray-200">
+                                <div class="flex items-center gap-3">
+                                    <button id="btn-play-pause" onclick="togglePlayPause()" class="hover:text-brand-red transition">
+                                        <i class="fa-solid fa-play"></i>
+                                    </button>
+                                    <span id="time-display" class="font-mono text-xs text-gray-400">00:00 / 10:45</span>
+                                </div>
+
+                                <div class="flex items-center gap-4">
+                                    <div class="flex items-center gap-1 group/vol">
+                                        <button id="btn-mute" onclick="toggleMute()" class="hover:text-brand-red transition">
+                                            <i class="fa-solid fa-volume-high"></i>
+                                        </button>
+                                        <input id="volume-bar" type="range" min="0" max="1" step="0.1" value="1" class="w-16 h-1 bg-zinc-700 rounded appearance-none cursor-pointer accent-brand-red">
+                                    </div>
+                                    <select onclick="triggerAdsterraLink()" class="bg-zinc-800 border border-zinc-700 rounded px-1.5 py-0.5 text-xs text-gray-300 focus:outline-none">
+                                        <option>1080p HD</option>
+                                        <option>720p</option>
+                                        <option>480p</option>
+                                    </select>
+                                    <button onclick="toggleFullscreen()" class="hover:text-brand-red transition">
+                                        <i class="fa-solid fa-expand"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-brand-card border border-brand-border rounded-2xl p-5 shadow-lg">
+                    <h1 class="text-xl sm:text-2xl font-bold text-white mb-2 leading-snug">
+                        Exclusive Premium Video Uncut Full HD Quality
+                    </h1>
+                    
+                    <div class="flex flex-wrap items-center justify-between gap-4 border-b border-brand-border pb-4 mb-4 text-xs sm:text-sm text-gray-400">
+                        <div class="flex items-center gap-4">
+                            <span><i class="fa-solid fa-eye text-gray-500 mr-1"></i> 1,245,890 views</span>
+                            <span><i class="fa-regular fa-clock text-gray-500 mr-1"></i> 10:45 min</span>
+                            <span><i class="fa-regular fa-calendar text-gray-500 mr-1"></i> 2 Jam yang lalu</span>
+                        </div>
+                    </div>
+
+                    <!-- Action Bar (Likes, Share, Download) -->
+                    <div class="flex flex-wrap items-center justify-between gap-3">
+                        <div class="flex items-center gap-2">
+                            <button onclick="handleAction('like')" class="flex items-center gap-2 bg-zinc-800 hover:bg-zinc-700 border border-brand-border px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition active:scale-95">
+                                <i class="fa-solid fa-thumbs-up text-brand-red"></i>
+                                <span id="like-count">45.2K</span>
+                            </button>
+                            <button onclick="handleAction('share')" class="flex items-center gap-2 bg-zinc-800 hover:bg-zinc-700 border border-brand-border px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition active:scale-95">
+                                <i class="fa-solid fa-share text-blue-400"></i>
+                                <span>Bagikan</span>
+                            </button>
+                        </div>
+
+                        <button onclick="handleAction('download')" class="flex items-center gap-2 bg-brand-red hover:bg-brand-darkRed text-white px-5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition shadow-md active:scale-95">
+                            <i class="fa-solid fa-download"></i>
+                            <span>Download High Speed (HD)</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-brand-card border border-brand-border rounded-2xl p-5 shadow-lg">
+                    <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                        <i class="fa-regular fa-comments text-brand-red"></i> Komentar (<span id="comment-total">3</span>)
+                    </h3>
+
+                    <!-- Input Komentar -->
+                    <form onsubmit="addComment(event)" class="mb-6">
+                        <div class="flex gap-3">
+                            <div class="w-10 h-10 rounded-full bg-zinc-800 border border-brand-border flex items-center justify-center text-gray-400 font-bold text-sm shrink-0">
+                                You
+                            </div>
+                            <div class="flex-grow flex flex-col gap-2">
+                                <textarea id="comment-input" rows="2" placeholder="Tulis komentar kamu..." required class="w-full bg-zinc-900 border border-brand-border rounded-xl p-3 text-sm text-gray-200 placeholder-gray-500 focus:outline-none focus:border-brand-red transition resize-none"></textarea>
+                                <div class="flex justify-end">
+                                    <button type="submit" class="bg-zinc-800 hover:bg-zinc-700 border border-brand-border text-white text-xs font-semibold px-4 py-2 rounded-lg transition">
+                                        Kirim Komentar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- Daftar Komentar -->
+                    <div id="comments-container" class="flex flex-col gap-4">
+                        <!-- Komentar Demo 1 -->
+                        <div class="flex gap-3 border-b border-brand-border/50 pb-3">
+                            <div class="w-9 h-9 rounded-full bg-indigo-600/20 text-indigo-400 border border-indigo-500/30 flex items-center justify-center font-bold text-xs shrink-0">
+                                AD
+                            </div>
+                            <div>
+                                <div class="flex items-center gap-2 mb-1">
+                                    <span class="text-xs font-semibold text-gray-200">Andi Pratama</span>
+                                    <span class="text-[10px] text-gray-500">15 menit yang lalu</span>
+                                </div>
+                                <p class="text-xs text-gray-300 leading-relaxed">Kualitas videonya jernih banget 1080p tanpa buffer, mantap!</p>
+                            </div>
+                        </div>
+
+                        <!-- Komentar Demo 2 -->
+                        <div class="flex gap-3 border-b border-brand-border/50 pb-3">
+                            <div class="w-9 h-9 rounded-full bg-emerald-600/20 text-emerald-400 border border-emerald-500/30 flex items-center justify-center font-bold text-xs shrink-0">
+                                BZ
+                            </div>
+                            <div>
+                                <div class="flex items-center gap-2 mb-1">
+                                    <span class="text-xs font-semibold text-gray-200">Budi Santoso</span>
+                                    <span class="text-[10px] text-gray-500">42 menit yang lalu</span>
+                                </div>
+                                <p class="text-xs text-gray-300 leading-relaxed">Link downloadnya cepat banget, makasih min update videonya.</p>
+                            </div>
+                        </div>
+
+                        <!-- Komentar Demo 3 -->
+                        <div class="flex gap-3">
+                            <div class="w-9 h-9 rounded-full bg-rose-600/20 text-rose-400 border border-rose-500/30 flex items-center justify-center font-bold text-xs shrink-0">
+                                RL
+                            </div>
+                            <div>
+                                <div class="flex items-center gap-2 mb-1">
+                                    <span class="text-xs font-semibold text-gray-200">Rian L.</span>
+                                    <span class="text-[10px] text-gray-500">1 jam yang lalu</span>
+                                </div>
+                                <p class="text-xs text-gray-300 leading-relaxed">Ditunggu updatenya kak</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="flex flex-col gap-6">
+                
+                <!-- Slot Iklan Banner Medium Square (300x250) -->
+                <div class="bg-brand-card border border-brand-border rounded-2xl p-4 flex flex-col items-center justify-center text-center shadow-lg min-h-[280px]">
+                    <span class="text-[10px] uppercase tracking-wider text-gray-500 mb-2">Sponsor</span>
+                    <!-- PLACEHOLDER ADSTERRA 300x250 -->
+                    <div id="adsterra-banner-300" class="w-full h-full flex items-center justify-center">
+                        <div class="text-xs text-gray-500 p-4 border border-dashed border-brand-border rounded-xl w-full">
+                            <p class="font-semibold text-gray-400 mb-1">[ Space Iklan Adsterra 300x250 ]</p>
+                            <p class="text-[11px]">Tempelkan kode Adsterra Banner (300x250) Anda di sini</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slot Iklan Native Banner Adsterra -->
+                <div class="bg-brand-card border border-brand-border rounded-2xl p-4 shadow-lg">
+                    <h4 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">Rekomendasi</h4>
+                    <!-- PLACEHOLDER ADSTERRA NATIVE ADS -->
+                    <div id="adsterra-native-ads">
+                        <div onclick="triggerAdsterraLink()" class="cursor-pointer group flex gap-3 bg-zinc-900/60 hover:bg-zinc-900 border border-brand-border p-2.5 rounded-xl transition mb-3">
+                            <div class="w-20 h-16 bg-zinc-800 rounded-lg overflow-hidden shrink-0 relative">
+                                <img src="https://images.unsplash.com/photo-1518173946687-a4c8a383392e?q=80&w=300&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition" alt="Ads">
+                                <span class="absolute bottom-1 right-1 bg-black/80 text-[9px] px-1 rounded text-white font-mono">12:00</span>
+                            </div>
+                            <div class="flex flex-col justify-center">
+                                <h5 class="text-xs font-semibold text-gray-200 group-hover:text-brand-red transition line-clamp-2">Recommended Premium Exclusive Video HD</h5>
+                                <span class="text-[10px] text-gray-500 mt-1">Sponsor</span>
+                            </div>
+                        </div>
+                        <div onclick="triggerAdsterraLink()" class="cursor-pointer group flex gap-3 bg-zinc-900/60 hover:bg-zinc-900 border border-brand-border p-2.5 rounded-xl transition">
+                            <div class="w-20 h-16 bg-zinc-800 rounded-lg overflow-hidden shrink-0 relative">
+                                <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?q=80&w=300&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition" alt="Ads">
+                                <span class="absolute bottom-1 right-1 bg-black/80 text-[9px] px-1 rounded text-white font-mono">08:30</span>
+                            </div>
+                            <div class="flex flex-col justify-center">
+                                <h5 class="text-xs font-semibold text-gray-200 group-hover:text-brand-red transition line-clamp-2">Hot Trending Video Update Streaming Fast</h5>
+                                <span class="text-[10px] text-gray-500 mt-1">Sponsor</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="bg-brand-card border-t border-brand-border mt-12 py-6 text-center text-xs text-gray-500">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p>&copy; 2026 Stream HD Premium. Hak Cipta Dilindungi.</p>
+            <div class="flex gap-4">
+                <a href="#" onclick="triggerAdsterraLink(); return false;" class="hover:text-gray-300">Privacy Policy</a>
+                <a href="#" onclick="triggerAdsterraLink(); return false;" class="hover:text-gray-300">Terms of Service</a>
+                <a href="#" onclick="triggerAdsterraLink(); return false;" class="hover:text-gray-300">Contact 18+</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        /* 
+           ===================================================================
+           KONFIGURASI ADSTERRA SMARTLINK / DIRECT LINK
+           ===================================================================
+           Ganti URL di bawah ini dengan Direct Link / Smartlink dari akun Adsterra Anda.
+        */
+        const ADSTERRA_DIRECT_LINK = "https://www.profitableratecpmnetwork.com/agijdjkf?key=b68403d796344c04660419b144a9cea4"; 
+
+        // Variable State
+        let hasClickedVideoAds = false;
+        const video = document.getElementById('main-video');
+        const playPauseBtn = document.getElementById('btn-play-pause');
+        const progressBar = document.getElementById('progress-bar');
+        const timeDisplay = document.getElementById('time-display');
+        const volumeBar = document.getElementById('volume-bar');
+
+        // 1. Fungsi Pemicu Adsterra Direct Link (Membuka di Tab Baru)
+        function triggerAdsterraLink() {
+            if (ADSTERRA_DIRECT_LINK && ADSTERRA_DIRECT_LINK !== "") {
+                window.open(ADSTERRA_DIRECT_LINK, '_blank');
+            }
+        }
+
+        // 2. Fungsi Konfirmasi Usia 18+
+        function confirmAge(isAdult) {
+            if (isAdult) {
+                // Sembunyikan Modal
+                const modal = document.getElementById('age-modal');
+                modal.classList.add('opacity-0', 'pointer-events-none');
+                setTimeout(() => modal.remove(), 300);
+
+                // Pemicu Adsterra Direct Link saat klik tombol Berusia 18+
+                triggerAdsterraLink();
+            } else {
+                // Alihkan ke Google jika di bawah 18 tahun
+                window.location.href = "https://www.google.com";
+            }
+        }
+
+        // 3. Fake Video Player / Trigger Iklan Pertama pada Video
+        function handleVideoClick() {
+            if (!hasClickedVideoAds) {
+                hasClickedVideoAds = true;
+                // Buka Iklan Adsterra Direct Link
+                triggerAdsterraLink();
+                
+                // Hilangkan Overlay Play Besar & Mulai Memutar Video
+                document.getElementById('video-overlay').classList.add('hidden');
+                video.play();
+                updatePlayPauseIcon(true);
+            } else {
+                togglePlayPause();
+            }
+        }
+
+        function togglePlayPause() {
+            if (!hasClickedVideoAds) {
+                handleVideoClick();
+                return;
+            }
+
+            if (video.paused) {
+                video.play();
+                updatePlayPauseIcon(true);
+            } else {
+                video.pause();
+                updatePlayPauseIcon(false);
+            }
+        }
+
+        function updatePlayPauseIcon(isPlaying) {
+            playPauseBtn.innerHTML = isPlaying 
+                ? '<i class="fa-solid fa-pause"></i>' 
+                : '<i class="fa-solid fa-play"></i>';
+        }
+
+        // 4. Update Time & Progress Bar
+        video.addEventListener('timeupdate', () => {
+            if(video.duration) {
+                const progress = (video.currentTime / video.duration) * 100;
+                progressBar.value = progress;
+
+                // Format Waktu
+                const currentMin = Math.floor(video.currentTime / 60);
+                const currentSec = Math.floor(video.currentTime % 60).toString().padStart(2, '0');
+                const durationMin = Math.floor(video.duration / 60);
+                const durationSec = Math.floor(video.duration % 60).toString().padStart(2, '0');
+
+                timeDisplay.textContent = `${currentMin}:${currentSec} / ${durationMin}:${durationSec}`;
+            }
+        });
+
+        progressBar.addEventListener('input', () => {
+            const seekTime = (progressBar.value / 100) * video.duration;
+            video.currentTime = seekTime;
+        });
+
+        // Volume Control
+        volumeBar.addEventListener('input', (e) => {
+            video.volume = e.target.value;
+        });
+
+        function toggleMute() {
+            video.muted = !video.muted;
+            document.getElementById('btn-mute').innerHTML = video.muted 
+                ? '<i class="fa-solid fa-volume-xmark"></i>' 
+                : '<i class="fa-solid fa-volume-high"></i>';
+        }
+
+        function toggleFullscreen() {
+            if (!document.fullscreenElement) {
+                video.parentElement.requestFullscreen().catch(err => alert(`Error: ${err.message}`));
+            } else {
+                document.exitFullscreen();
+            }
+        }
+
+        // 5. Interaksi Tombol Action (Like, Share, Download)
+        function handleAction(actionType) {
+            // Trigger Adsterra Link pada setiap klik aksi
+            triggerAdsterraLink();
+
+            if (actionType === 'like') {
+                const likeEl = document.getElementById('like-count');
+                likeEl.textContent = '45.3K';
+            } else if (actionType === 'share') {
+                // Fallback copy link
+                const dummy = document.createElement('input');
+                document.body.appendChild(dummy);
+                dummy.value = window.location.href;
+                dummy.select();
+                document.execCommand('copy');
+                document.body.removeChild(dummy);
+                alert('Link video berhasil disalin!');
+            }
+        }
+
+        // 6. Fungsi Tambah Komentar Interaktif
+        function addComment(event) {
+            event.preventDefault();
+            const input = document.getElementById('comment-input');
+            const text = input.value.trim();
+
+            if (text !== "") {
+                // Trigger Adsterra Link saat posting komentar
+                triggerAdsterraLink();
+
+                const container = document.getElementById('comments-container');
+                const totalEl = document.getElementById('comment-total');
+
+                const newCommentHtml = `
+                    <div class="flex gap-3 border-b border-brand-border/50 pb-3 animate-fade-in">
+                        <div class="w-9 h-9 rounded-full bg-brand-red/20 text-brand-red border border-brand-red/30 flex items-center justify-center font-bold text-xs shrink-0">
+                            ME
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="text-xs font-semibold text-gray-200">Pengunjung (Anda)</span>
+                                <span class="text-[10px] text-gray-500">Baru saja</span>
+                            </div>
+                            <p class="text-xs text-gray-300 leading-relaxed">${escapeHtml(text)}</p>
+                        </div>
+                    </div>
+                `;
+
+                container.insertAdjacentHTML('afterbegin', newCommentHtml);
+                totalEl.textContent = parseInt(totalEl.textContent) + 1;
+                input.value = "";
+            }
+        }
+
+        function escapeHtml(string) {
+            return String(string).replace(/[&<>"']/g, function (s) {
+                return {
+                    '&': '&amp;',
+                    '<': '&lt;',
+                    '>': '&gt;',
+                    '"': '&quot;',
+                    "'": '&#39;'
+                }[s];
+            });
+        }
+    </script>
 </body>
 </html>
